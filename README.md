@@ -24,7 +24,10 @@ Error Handling: Returns appropriate error responses for invalid requests or non-
 ### Clone the Repository
 ```
 git clone https://github.com/Sergio1308/github-repos-api.git
-cd repo
+```
+Then navigate to your project directory
+```
+cd your/path/github-repos-api
 ```
 ### Configure Application Properties
 Edit the src/main/resources/application.properties file to include your GitHub API access token:
