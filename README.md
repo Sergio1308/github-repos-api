@@ -1,6 +1,16 @@
 # GitHub Repository API
 ## Overview
 The GitHub Repository API is a Spring Boot application that interacts with the GitHub API to retrieve information about a user's repositories. It filters out forked repositories and provides detailed information on branches and commits. The API handles various error scenarios and offers a structured response for different cases.
+## Navigation
+* [Features](#features)
+* [Prerequisites](#prerequisites)
+* [Setup Instructions](#setup-instructions)
+  * [Clone the Repository](#Clone-the-Repository)
+  * [Configure Application Properties](#Configure-Application-Properties)
+  * [Build and Run](#Build-and-Run)
+* [Usage](#Usage)
+  * [API Endpoints](#API-Endpoints)
+  * [Error Responses](#Error-Responses)
 ## Features
 Retrieve Non-Forked Repositories: Lists all repositories for a given GitHub user that are not forks.
 Branch Information: Provides branch names and commit SHAs for each repository.
@@ -13,7 +23,7 @@ Error Handling: Returns appropriate error responses for invalid requests or non-
 ## Setup Instructions
 ### Clone the Repository
 ```
-git clone https://github.com/Sergio1308/repo.git
+git clone https://github.com/Sergio1308/github-repos-api.git
 cd repo
 ```
 ### Configure Application Properties
@@ -42,15 +52,18 @@ Headers:
 Accept: application/json
 
 Response:
-
+```
 Success (200 OK): Returns a list of repositories with branch information.
-
+```
+or
+```
 Not Found (404 Not Found): Returns an error response if the user does not exist.
+```
 Example Request:
 ```
 curl -H "Accept: application/json" http://localhost:8080/api/users/sergio1308/repos
 ```
-Example Response:
+Example Response (partial):
 ```
 [
   {
@@ -67,6 +80,7 @@ Example Response:
       }
     ]
   }
+  ...
 ]
 ```
 ### Error Responses
